@@ -1,24 +1,26 @@
 package Soon.Coming.springbootdeveloper.domain;
 
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
+import jakarta.persistence.*; // JPA 관련 어노테이션을 임포트
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import jakarta.persistence.*; // JPA 관련 어노테이션을 임포트
 import java.util.Collection;
 import java.util.List;
 
+@Table(name = "users") // 작은따옴표('') 대신 큰따옴표("") 사용
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity // JPA 엔티티로 지정
-public class Member implements UserDetails {
+public class User implements UserDetails {
 
-    //허허 시부럴 뭐가 문제냐 이 썅놈의자식
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false) // 'updatable' 속성의 오타 수정
+    @Column(name = "id", updatable = false)
     private Long id;
 
     @Column(nullable = false, unique = true)
