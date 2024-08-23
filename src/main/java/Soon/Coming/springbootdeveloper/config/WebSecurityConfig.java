@@ -5,10 +5,13 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -23,7 +26,7 @@ public class WebSecurityConfig {
 
 
     @Bean
-    //*1. 스프링 시큐리티 기능 비활성화/
+    /*1. 스프링 시큐리티 기능 비활성화*/
     public WebSecurityCustomizer configure(){
         return(web -> web.ignoring()
                 .requestMatchers(toH2Console())
@@ -31,7 +34,7 @@ public class WebSecurityConfig {
         );
     }
 
-    //*2. 특정 HTTP 요청에 대한 웹 기반 보안 구성
+    /**2. 특정 HTTP 요청에 대한 웹 기반 보안 구성 */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
@@ -54,6 +57,21 @@ public class WebSecurityConfig {
                 .build();
     }
 
+    /** 인증 관리자 관련 설정 */
     @Bean
-    public AuthenticationManager authenticationManager(HttpSecurity) throws Exception {}
+    public AuthenticationManager authenticationManager(HttpSecurity http,
+                                                       BCryptPasswordEncoder bCryptpasswordEncoder,
+                                                       UserDetailService userDetailService)
+            throws Exception {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+        authProvider.setUserDetailsService(userService); //사용자 정보 서비스 설정
+        authProvider.setPasswordEncoder(bCryptpasswordEncoder);
+        return new ProviderManager(authProvider);
+    }
+
+    /** 패스워드 인코더로 사용할 빈 등록하기*/
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
 }
