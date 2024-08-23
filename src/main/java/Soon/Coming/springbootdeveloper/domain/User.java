@@ -15,6 +15,7 @@ import java.util.List;
 @Entity // JPA 엔티티로 지정
 public class Member implements UserDetails {
 
+    //허허 시부럴 뭐가 문제냐 이 썅놈의자식
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false) // 'updatable' 속성의 오타 수정
