@@ -1,10 +1,19 @@
 package Soon.Coming.springbootdeveloper.post.domain;
 
+import Soon.Coming.springbootdeveloper.common.entity.BaseEntity;
 import Soon.Coming.springbootdeveloper.domain.User;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Builder
 @Entity
-public class Post {
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Post extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //기본키 1씩 증가

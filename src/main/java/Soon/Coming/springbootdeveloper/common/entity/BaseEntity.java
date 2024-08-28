@@ -1,6 +1,5 @@
 package Soon.Coming.springbootdeveloper.common.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
@@ -13,7 +12,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 @Getter
-public class baseEntity {
+public class BaseEntity {
 
     @CreatedDate
     protected LocalDateTime createdAt; //언제 만들어졌는가?

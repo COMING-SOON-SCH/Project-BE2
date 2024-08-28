@@ -1,6 +1,7 @@
 package Soon.Coming.springbootdeveloper.domain;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -14,7 +15,8 @@ import java.util.List;
 
 @Table(name = "users") // 작은따옴표('') 대신 큰따옴표("") 사용
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity // JPA 엔티티로 지정
 public class User implements UserDetails {
 
@@ -29,8 +31,9 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
+    /*@Column(nullable = false)
     private String name;
+    */
 
     // 권한 반환
     @Override
