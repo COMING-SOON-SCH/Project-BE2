@@ -1,6 +1,6 @@
 package Soon.Coming.springbootdeveloper.repository;
 
-import Soon.Coming.springbootdeveloper.domain.User;
+import Soon.Coming.springbootdeveloper.userSignup.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

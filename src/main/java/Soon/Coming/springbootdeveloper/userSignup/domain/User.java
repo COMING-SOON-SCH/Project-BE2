@@ -1,4 +1,4 @@
-package Soon.Coming.springbootdeveloper.domain;
+package Soon.Coming.springbootdeveloper.userSignup.domain;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
