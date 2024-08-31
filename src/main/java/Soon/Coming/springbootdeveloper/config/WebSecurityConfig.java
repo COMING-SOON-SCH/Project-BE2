@@ -1,4 +1,4 @@
-package Soon.Coming.springbootdeveloper.userSignup.config;
+package Soon.Coming.springbootdeveloper.config;
 
 import Soon.Coming.springbootdeveloper.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
