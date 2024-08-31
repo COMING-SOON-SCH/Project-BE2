@@ -1,14 +1,15 @@
 <<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
 <<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
+<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
 package user.config;
 ========
 package Soon.Coming.springbootdeveloper.userSignup.config;
->>>>>>>> 729f8df (feat : ?????¤í?? ?????¤í?? ì½???? ??????ì¤?):src/main/java/Soon/Coming/springbootdeveloper/userSignup/config/WebSecurityConfig.java
-========
-package Soon.Coming.springbootdeveloper.config;
->>>>>>>> 92b656f (feat: ?????¤í?? ì½???? ??????ì¤?):src/main/java/Soon/Coming/springbootdeveloper/config/WebSecurityConfig.java
 
 import Soon.Coming.springbootdeveloper.service.UserDetailService;
+========
+package user.config;
+
+import user.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +34,7 @@ public class WebSecurityConfig {
     private final UserDetailService userService;
 
     @Bean
-    // 1. ??¤í??ë§? ??????ë¦???? ê¸°ë?? ë¹??????±í??
+    /*1. ??¤í??ë§? ??????ë¦???? ê¸°ë?? ë¹??????±í??*/
     public WebSecurityCustomizer configure(){
         return(web -> web.ignoring()
                 .requestMatchers(toH2Console())
