@@ -1,14 +1,18 @@
 <<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
 <<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
+<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
 package user.config;
 ========
 package Soon.Coming.springbootdeveloper.userSignup.config;
->>>>>>>> 729f8df (feat : ?????��?? ?????��?? �???? ??????�?):src/main/java/Soon/Coming/springbootdeveloper/userSignup/config/WebSecurityConfig.java
+>>>>>>>> 729f8df (feat : 포스트 테스트 코드 제작중):src/main/java/Soon/Coming/springbootdeveloper/userSignup/config/WebSecurityConfig.java
 ========
 package Soon.Coming.springbootdeveloper.config;
->>>>>>>> 92b656f (feat: ?????��?? �???? ??????�?):src/main/java/Soon/Coming/springbootdeveloper/config/WebSecurityConfig.java
+>>>>>>>> 92b656f (feat: 테스트 코드 제작중):src/main/java/Soon/Coming/springbootdeveloper/config/WebSecurityConfig.java
+========
+package Soon.Coming.springbootdeveloper.userSignup.config;
+>>>>>>>> e16905a (feat : 포스트 테스트 코드 제작중):src/main/java/Soon/Coming/springbootdeveloper/userSignup/config/WebSecurityConfig.java
 
-import Soon.Coming.springbootdeveloper.service.UserDetailService;
+import user.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +37,7 @@ public class WebSecurityConfig {
     private final UserDetailService userService;
 
     @Bean
-    // 1. ??��??�? ??????�???? 기�?? �??????��??
+    /*1. 스프링 시큐리티 기능 비활성화*/
     public WebSecurityCustomizer configure(){
         return(web -> web.ignoring()
                 .requestMatchers(toH2Console())
@@ -41,7 +45,7 @@ public class WebSecurityConfig {
         );
     }
 
-    /**2. ??��?? HTTP ???청�?? ?????? ??? 기�?? 보�?? �???? */
+    /**2. 특정 HTTP 요청에 대한 웹 기반 보안 구성 */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
@@ -56,27 +60,27 @@ public class WebSecurityConfig {
                         .loginPage("/login")
                         .defaultSuccessUrl("/articles")
                 )
-                .logout(logout -> logout //�?그�????? ??��??
+                .logout(logout -> logout //로그아웃 설정
                         .logoutSuccessUrl("/login")
                         .invalidateHttpSession(true)
                 )
-                .csrf(AbstractHttpConfigurer::disable) //csrf �??????��??
+                .csrf(AbstractHttpConfigurer::disable) //csrf 비활성화
                 .build();
     }
 
-    /** ??��?? �?�???? �???? ??��?? */
+    /** 인증 관리자 관련 설정 */
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http,
                                                        BCryptPasswordEncoder bCryptpasswordEncoder,
                                                        UserDetailService userDetailService)
             throws Exception {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userService); //????????? ???�? ???�???? ??��??
+        authProvider.setUserDetailsService(userService); //사용자 정보 서비스 설정
         authProvider.setPasswordEncoder(bCryptpasswordEncoder);
         return new ProviderManager(authProvider);
     }
 
-    /** ?????��????? ??��?????�? ????????? �? ??��?????�?*/
+    /** 패스워드 인코더로 사용할 빈 등록하기*/
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();

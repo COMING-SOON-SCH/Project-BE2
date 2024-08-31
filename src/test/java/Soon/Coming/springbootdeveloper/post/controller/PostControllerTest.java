@@ -12,20 +12,17 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import java.util.List;
-
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@AutoConfigureMockMvc
 @SpringBootTest //?????¤í?¸ì?? ??????ë¦?ì¼???´ì?? ì»??????¤í??
-public class PostControllerTest {
+@AutoConfigureMockMvc
+class PostControllerTest {
 
     @Autowired
-    public MockMvc mockMvc;
+    protected MockMvc mockMvc;
 
     @Autowired
-    public ObjectMapper objectMapper; //ì§???????, ??­ì????????
+    protected ObjectMapper objectMapper; //ì§???????, ??­ì????????
 
     @Autowired
     private WebApplicationContext context;
@@ -40,7 +37,7 @@ public class PostControllerTest {
         postRepository.deleteAll();
     }
 
-    @DisplayName("Test about addArticle : ê¸? ì¶?ê°???? ??±ê³µ")
+    @DisplayName("addArticle : ê¸? ì¶?ê°???? ??±ê³µ")
     @Test
     public void addArticle() throws Exception {
         //given

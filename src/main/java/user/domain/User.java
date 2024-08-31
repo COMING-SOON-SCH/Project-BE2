@@ -1,8 +1,12 @@
 <<<<<<<< HEAD:src/main/java/user/domain/User.java
+<<<<<<<< HEAD:src/main/java/user/domain/User.java
 package user.domain;
 ========
 package Soon.Coming.springbootdeveloper.userSignup.domain;
 >>>>>>>> 729f8df (feat : ?????¤í?? ?????¤í?? ì½???? ??????ì¤?):src/main/java/Soon/Coming/springbootdeveloper/userSignup/domain/User.java
+========
+package Soon.Coming.springbootdeveloper.domain;
+>>>>>>>> 92b656f (feat: ?????¤í?? ì½???? ??????ì¤?):src/main/java/Soon/Coming/springbootdeveloper/domain/User.java
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

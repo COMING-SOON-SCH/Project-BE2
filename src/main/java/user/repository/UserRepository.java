@@ -1,6 +1,10 @@
 package user.repository;
 
+<<<<<<< HEAD:src/main/java/user/repository/UserRepository.java
 import user.domain.User;
+=======
+import Soon.Coming.springbootdeveloper.userSignup.domain.User;
+>>>>>>> e16905a (feat : 포스트 테스트 코드 제작중):src/main/java/Soon/Coming/springbootdeveloper/repository/UserRepository.java
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
