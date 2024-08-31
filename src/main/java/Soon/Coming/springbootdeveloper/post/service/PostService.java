@@ -17,6 +17,10 @@ public class PostService {
 
     public Post createPost(CreatePostRequest createPostRequest) {
        return postRepository.save(createPostRequest.toEntity());
+    }
 
+    /** 데이터베이스에 저장되어 있는 글을 모두 가져오게 함*/
+    public List<Post> findAll(){
+        return postRepository.findAll();
     }
 }

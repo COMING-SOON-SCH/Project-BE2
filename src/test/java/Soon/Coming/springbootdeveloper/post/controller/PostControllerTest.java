@@ -25,6 +25,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+//아니 30분전까진 잘됐잖아 기본 테스트 설정을 Gradle->InteliJ로 바꾸면 되는데 아니 근데 왜 안되
+//넌 항상 그런식이야
 @AutoConfigureMockMvc
 @SpringBootTest //테스트용 애플리케이션 컨텍스트
 public class PostControllerTest {
