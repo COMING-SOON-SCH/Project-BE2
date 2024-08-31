@@ -20,6 +20,7 @@ public class PostController {
     //api post
     @PostMapping("/posts")
     public ResponseEntity<Post> createPost(@RequestBody @Validated CreatePostRequest createPostRequest){
-        return ResponseEntity.ok().body(postService.createPost(createPostRequest));
+        Post post = postService.createPost(createPostRequest);
+        return ResponseEntity.ok().body(post);
     }
 }

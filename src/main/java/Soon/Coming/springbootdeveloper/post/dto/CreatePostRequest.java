@@ -1,6 +1,6 @@
 package Soon.Coming.springbootdeveloper.post.dto;
 
-import Soon.Coming.springbootdeveloper.domain.User;
+import user.domain.User;
 import Soon.Coming.springbootdeveloper.post.domain.Post;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
@@ -25,10 +25,12 @@ public class CreatePostRequest {
     private Long categoryId;
 
     public Post toEntity() {
+        //나중에 수정
+        User userExample = new User(1L, "Ogu", "password");
         return Post.builder()
                 .title(title)
                 .content(content)
-                .user(new User(1L, "Ogu", "password"))
+                .user(userExample)
                 .build();
     }
 }
