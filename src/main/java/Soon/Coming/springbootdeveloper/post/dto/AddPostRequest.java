@@ -19,9 +19,12 @@ public class AddPostRequest {
     private String title;
     private String content;
     public Post toEntity() {
+        //???ì¤???? ??????
+        User userExample = new User(1L, "Ogu", "password");
         return Post.builder()
                 .title(title)
                 .content(content)
+                .user(new User(1L, "Ogu", "password"))
                 .build();
     }
 }

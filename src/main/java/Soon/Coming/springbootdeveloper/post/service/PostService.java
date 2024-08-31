@@ -13,17 +13,16 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class PostService {
+
     private final PostRepository postRepository;
 
     public Post createPost(CreatePostRequest createPostRequest) {
        return postRepository.save(createPostRequest.toEntity());
-
     }
 
-    //?????? ì¡°í??
-    public Post findById(long id) {
-        return postRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+    /** ??°ì?´í?°ë????´ì?¤ì?? ?????¥ë????? ?????? ê¸???? ëª???? ê°???¸ì?¤ê?? ???*/
+    public List<Post> findAll(){
+        return postRepository.findAll();
     }
 
     //??­ì??
