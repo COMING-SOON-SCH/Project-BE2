@@ -25,10 +25,12 @@ public class CreatePostRequest {
     private Long categoryId;
 
     public Post toEntity() {
+        //나중에 수정
+        User userExample = new User(1L, "Ogu", "password");
         return Post.builder()
                 .title(title)
                 .content(content)
-                .user(new User(1L, "Ogu", "password"))
+                .user(userExample)
                 .build();
     }
 }

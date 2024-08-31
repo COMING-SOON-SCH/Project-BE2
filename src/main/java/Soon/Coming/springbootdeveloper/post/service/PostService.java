@@ -10,15 +10,15 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class PostService {
+public class    PostService {
 
     private final PostRepository postRepository;
 
     public Post createPost(CreatePostRequest createPostRequest) {
-       return postRepository.save(createPostRequest.toEntity());
+        Post post = createPostRequest.toEntity();
+       return postRepository.save(post);
     }
-
-    /** 데이터베이스에 저장되어 있는 글을 모두 가져오게 함*/
+    /** 데이터베이스에 저장되어 있는 글을 모두 가져오게 함 */
     public List<Post> findAll(){
         return postRepository.findAll();
     }
