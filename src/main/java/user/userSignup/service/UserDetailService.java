@@ -1,7 +1,7 @@
-package Soon.Coming.springbootdeveloper.service;
+package user.userSignup.service;
 
-import Soon.Coming.springbootdeveloper.userSignup.domain.User;
-import Soon.Coming.springbootdeveloper.repository.UserRepository;
+import user.userSignup.domain.User;
+import user.userSignup.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;

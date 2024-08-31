@@ -1,4 +1,4 @@
-package Soon.Coming.springbootdeveloper.read.controller;
+package Soon.Coming.springbootdeveloper.read.domain;
 
 
 import Soon.Coming.springbootdeveloper.post.service.PostService;

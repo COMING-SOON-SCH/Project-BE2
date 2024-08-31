@@ -3,7 +3,7 @@ package Soon.Coming.springbootdeveloper.post.controller;
 import Soon.Coming.springbootdeveloper.post.domain.Post;
 import Soon.Coming.springbootdeveloper.post.dto.CreatePostRequest;
 import Soon.Coming.springbootdeveloper.post.repository.PostRepository;
-import Soon.Coming.springbootdeveloper.userSignup.domain.User;
+import user.userSignup.domain.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

@@ -1,6 +1,6 @@
-package Soon.Coming.springbootdeveloper.userSignup.config;
+package user.userSignup.config;
 
-import Soon.Coming.springbootdeveloper.service.UserDetailService;
+import user.userSignup.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
