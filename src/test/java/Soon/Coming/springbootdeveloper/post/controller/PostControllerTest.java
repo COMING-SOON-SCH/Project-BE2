@@ -19,20 +19,21 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.util.List;
 
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest //테스트용 애플리케이션 컨텍스트
 @AutoConfigureMockMvc
-class PostControllerTest {
+@SpringBootTest //테스트용 애플리케이션 컨텍스트
+public class PostControllerTest {
 
     @Autowired
-    protected MockMvc mockMvc;
+    public MockMvc mockMvc;
 
     @Autowired
-    protected ObjectMapper objectMapper; //직렬화, 역직렬화
+    public ObjectMapper objectMapper; //직렬화, 역직렬화
 
     @Autowired
     private WebApplicationContext context;
@@ -47,7 +48,7 @@ class PostControllerTest {
         postRepository.deleteAll();
     }
 
-    @DisplayName("addArticle : 글 추가에 성공")
+    @DisplayName("Test about addArticle : 글 추가에 성공")
     @Test
     public void addArticle() throws Exception {
         //given
