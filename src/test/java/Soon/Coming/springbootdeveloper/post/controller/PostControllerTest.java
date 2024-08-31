@@ -12,17 +12,20 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.util.List;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest //í…ŒìŠ¤íŠ¸ìš© ì• í”Œë¦¬ì¼€ì´ì…˜ ì»¨í…ìŠ¤íŠ¸
 @AutoConfigureMockMvc
-class PostControllerTest {
+@SpringBootTest //?????¤í?¸ì?? ??????ë¦?ì¼???´ì?? ì»??????¤í??
+public class PostControllerTest {
 
     @Autowired
-    protected MockMvc mockMvc;
+    public MockMvc mockMvc;
 
     @Autowired
-    protected ObjectMapper objectMapper; //ì§ë ¬í™”, ì—­ì§ë ¬í™”
+    public ObjectMapper objectMapper; //ì§???????, ??­ì????????
 
     @Autowired
     private WebApplicationContext context;
@@ -30,14 +33,14 @@ class PostControllerTest {
     @Autowired
     PostRepository postRepository;
 
-    @BeforeEach //í…ŒìŠ¤íŠ¸ ì‹¤í–‰ ì „ í•˜ë‚˜í•˜ë‚˜ ì‹¤í–‰
+    @BeforeEach //?????¤í?? ??¤í?? ??? ???????????? ??¤í??
     public void mockMvcSetUp(){
         this.mockMvc = MockMvcBuilders.webAppContextSetup(context)
                 .build();
         postRepository.deleteAll();
     }
 
-    @DisplayName("addArticle : ê¸€ ì¶”ê°€ì— ì„±ê³µ")
+    @DisplayName("Test about addArticle : ê¸? ì¶?ê°???? ??±ê³µ")
     @Test
     public void addArticle() throws Exception {
         //given
