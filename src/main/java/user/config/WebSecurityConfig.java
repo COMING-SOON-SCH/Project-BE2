@@ -1,4 +1,8 @@
+<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
 package user.config;
+========
+package Soon.Coming.springbootdeveloper.userSignup.config;
+>>>>>>>> 729f8df (feat : ?????¤í?? ?????¤í?? ì½???? ??????ì¤?):src/main/java/Soon/Coming/springbootdeveloper/userSignup/config/WebSecurityConfig.java
 
 import Soon.Coming.springbootdeveloper.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
