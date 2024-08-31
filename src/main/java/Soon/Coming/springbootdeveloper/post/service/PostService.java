@@ -5,7 +5,6 @@ import Soon.Coming.springbootdeveloper.post.dto.CreatePostRequest;
 import Soon.Coming.springbootdeveloper.post.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
