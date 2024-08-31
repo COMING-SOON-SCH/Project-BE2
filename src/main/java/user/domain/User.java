@@ -1,4 +1,4 @@
-package user.userSignup.domain;
+package user.domain;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
