@@ -15,29 +15,23 @@ import java.util.List;
 public class PostService {
     private final PostRepository postRepository;
 
-    //생성
-    public Long save(AddPostRequest request) {
-        Post post = postRepository.save(request.toEntity());
-        return post.getId();
+    public Post createPost(CreatePostRequest createPostRequest) {
+       return postRepository.save(createPostRequest.toEntity());
+
     }
 
-    //전체 조회
-    public List<Post> findAll() {
-        return postRepository.findAll();
-    }
-
-    //하나 조회
+    //?????? 조�??
     public Post findById(long id) {
         return postRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
     }
 
-    //삭제
+    //??��??
     public void delete(long id) {
         postRepository.deleteById(id);
     }
 
-    //수정
+    //??????
     @Transactional
     public Post update(long id, UpdatePostRequest request) {
         Post post = postRepository.findById(id)
