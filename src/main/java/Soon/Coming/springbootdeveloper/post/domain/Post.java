@@ -1,12 +1,12 @@
 package Soon.Coming.springbootdeveloper.post.domain;
 
 import Soon.Coming.springbootdeveloper.common.entity.BaseEntity;
-import user.domain.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 
 @Builder
 @Entity
@@ -25,7 +25,13 @@ public class Post extends BaseEntity {
     @Column(name = "content", nullable = false)
     private String content;
 
+    @Column(name = "user_id", nullable = false)
+    private Long user_id;
+
+    /*
     @ManyToOne(fetch = FetchType.LAZY) //유저에 관한 정보를 post가 필요할 때만 가져오게 함
     @JoinColumn(name = "user_id")
     private User user;
+    */
+
 }
