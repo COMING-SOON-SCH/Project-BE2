@@ -23,6 +23,12 @@ dependencies {
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
     //??¤í??ë§? ??????ë¦???°ë¥¼ ?????¤í?¸í??ê¸? ?????? ???ì¡´ì?? ì¶?ê°?
     testImplementation 'org.springframework.security:spring-security-test'
 

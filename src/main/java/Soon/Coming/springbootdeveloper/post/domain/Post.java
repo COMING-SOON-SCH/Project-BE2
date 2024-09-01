@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
+@Builder
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -23,14 +25,13 @@ public class Post {
     @Column(name = "content", nullable = false)
     private String content;
 
-    @Builder
-    public Post(String title, String content) {
-        this.title = title;
-        this.content = content;
-    }
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
-    public void update(String title, String content) {
-        this.title = title;
-        this.content = content;
-    }
+    /*
+    @ManyToOne(fetch = FetchType.LAZY) //????????? ê´???? ???ë³´ë¥¼ postê°? ????????? ???ë§? ê°???¸ì?¤ê?? ???
+    @JoinColumn(name = "user_id")
+    private User user;
+    */
+
 }
