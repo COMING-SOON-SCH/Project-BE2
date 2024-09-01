@@ -23,6 +23,9 @@ public class CreatePostRequest {
     @NotBlank
     private String content;
 
+    @NotBlank
+    private Long user_id;
+
     @Positive
     private Long categoryId;
 
@@ -32,6 +35,7 @@ public class CreatePostRequest {
         return Post.builder()
                 .title(title)
                 .content(content)
+                .user_id(user_id)
                 //.user(userExample)
                 .build();
     }

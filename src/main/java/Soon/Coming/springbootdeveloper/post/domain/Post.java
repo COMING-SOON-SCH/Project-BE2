@@ -27,7 +27,7 @@ public class Post extends BaseEntity {
     private String content;
 
     @Column(name = "user_id", nullable = false)
-    private Long userId;
+    private Long user_id;
 
     /*
     @ManyToOne(fetch = FetchType.LAZY) //유저에 관한 정보를 post가 필요할 때만 가져오게 함
