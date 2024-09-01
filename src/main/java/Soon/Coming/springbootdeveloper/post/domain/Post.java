@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
 @Builder
 @Entity
 @Getter
@@ -25,7 +26,13 @@ public class Post extends BaseEntity {
     @Column(name = "content", nullable = false)
     private String content;
 
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
+
+    /*
     @ManyToOne(fetch = FetchType.LAZY) //유저에 관한 정보를 post가 필요할 때만 가져오게 함
     @JoinColumn(name = "user_id")
     private User user;
+    */
+
 }

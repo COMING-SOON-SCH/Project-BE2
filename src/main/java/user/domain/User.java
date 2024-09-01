@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-@Table(name = "users") // 작은따옴표('') 대신 큰따옴표("") 사용
+
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

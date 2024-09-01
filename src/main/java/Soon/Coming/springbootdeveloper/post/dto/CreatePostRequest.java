@@ -1,5 +1,6 @@
 package Soon.Coming.springbootdeveloper.post.dto;
 
+import jakarta.persistence.Table;
 import user.domain.User;
 import Soon.Coming.springbootdeveloper.post.domain.Post;
 import jakarta.validation.constraints.NotBlank;
@@ -8,6 +9,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 
 @Getter
 @AllArgsConstructor
@@ -30,7 +32,7 @@ public class CreatePostRequest {
         return Post.builder()
                 .title(title)
                 .content(content)
-                .user(userExample)
+                //.user(userExample)
                 .build();
     }
 }
