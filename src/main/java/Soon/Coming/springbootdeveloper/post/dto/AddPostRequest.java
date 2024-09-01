@@ -19,13 +19,21 @@ public class AddPostRequest {
     @Size(min=1, max=5)
     private String title;
     private String content;
+
+    @NotBlank
+    private Long user_id;
+
+    @Positive
+    private Long categoryId;
+
     public Post toEntity() {
         //???ì¤???? ??????
         User userExample = new User(1L, "Ogu", "password");
         return Post.builder()
                 .title(title)
                 .content(content)
-                .user(userExample)
+                .user_id(user_id)
+                //.user(userExample)
                 .build();
     }
 }
