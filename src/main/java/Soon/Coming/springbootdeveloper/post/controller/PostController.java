@@ -5,7 +5,6 @@ import Soon.Coming.springbootdeveloper.post.dto.CreatePostRequest;
 import Soon.Coming.springbootdeveloper.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

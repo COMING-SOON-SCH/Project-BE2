@@ -1,6 +1,5 @@
 package Soon.Coming.springbootdeveloper.post.dto;
 
-import jakarta.persistence.Table;
 import user.domain.User;
 import Soon.Coming.springbootdeveloper.post.domain.Post;
 import jakarta.validation.constraints.NotBlank;

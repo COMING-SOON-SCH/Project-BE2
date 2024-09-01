@@ -1,7 +1,6 @@
 package Soon.Coming.springbootdeveloper.post.domain;
 
 import Soon.Coming.springbootdeveloper.common.entity.BaseEntity;
-import user.domain.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
