@@ -1,15 +1,11 @@
-<<<<<<<< HEAD:src/main/java/Soon/Coming/springbootdeveloper/user/domain/User.java
-package Soon.Coming.springbootdeveloper.user.domain;
-========
-package user.domain;
->>>>>>>> 5f49de1 (feat : post crud êµ¬í˜„ (ì‹ í˜œì¤€)):src/main/java/user/domain/User.java
+package Soon.Coming.springbootdeveloper.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import jakarta.persistence.*; // JPA ê´€ë ¨ ì–´ë…¸í…Œì´ì…˜ì„ ì„í¬íŠ¸
+import jakarta.persistence.*; // JPA ê´???? ??´ë?¸í????´ì????? ?????????
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,72 +13,68 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-<<<<<<<< HEAD:src/main/java/Soon/Coming/springbootdeveloper/user/domain/User.java
-@Builder
-========
-
->>>>>>>> 5f49de1 (feat : post crud êµ¬í˜„ (ì‹ í˜œì¤€)):src/main/java/user/domain/User.java
+@Table(name = "users") // ????????°ì?´í??('') ?????? ??°ë?°ì?´í??("") ??????
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity // JPA ì—”í‹°í‹°ë¡œ ì§€ì •
+@Entity // JPA ?????°í?°ë?? ì§????
 public class User implements UserDetails {
 
     @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id", nullable = false, unique = true)
-    private Long userId; //ìœ ì € ì‹ë³„ìš© ID
+    private Long userId; //?????? ???ë³???? ID
 
     @Column(name = "email", nullable = false, unique = true)
-    private String email; // ìœ ì € ì´ë©”ì¼
+    private String email; // ?????? ??´ë?????
 
     @Column(name = "username", nullable = false, unique = true)
-    private String username; //ìœ ì € ë‹‰ë„¤ì„
+    private String username; //?????? ?????¤ì??
 
     @Column(name = "password", nullable = false)
-    private String password; //ìœ ì € ë¹„ë°€ë²ˆí˜¸
+    private String password; //?????? ë¹?ë°?ë²????
 
-    // ê¶Œí•œ ë°˜í™˜
+    // ê¶???? ë°????
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("user"));
     }
 
 
-    // ì‚¬ìš©ìì˜ username ë°˜í™˜ (ê³ ìœ í•œ ê°’)
+    // ???????????? username ë°???? (ê³??????? ê°?)
     @Override
     public String getUsername() {
         return username;
     }
 
-    // ì‚¬ìš©ìì˜ ë¹„ë°€ë²ˆí˜¸ ë°˜í™˜
+    // ???????????? ë¹?ë°?ë²???? ë°????
     @Override
     public String getPassword() {
         return password;
     }
 
-    // ê³„ì • ë§Œë£Œ ì—¬ë¶€ ë°˜í™˜
+    // ê³???? ë§?ë£? ???ë¶? ë°????
     @Override
     public boolean isAccountNonExpired() {
-        return true; // true -> ë§Œë£Œë˜ì§€ ì•ŠìŒ
+        return true; // true -> ë§?ë£????ì§? ??????
     }
 
-    // ê³„ì • ì ê¸ˆ ì—¬ë¶€ ë°˜í™˜
+    // ê³???? ???ê¸? ???ë¶? ë°????
     @Override
     public boolean isAccountNonLocked() {
-        return true; // true -> ì ê¸ˆë˜ì§€ ì•ŠìŒ
+        return true; // true -> ???ê¸????ì§? ??????
     }
 
-    // íŒ¨ìŠ¤ì›Œë“œ ë§Œë£Œ ì—¬ë¶€ ë°˜í™˜
+    // ?????¤ì????? ë§?ë£? ???ë¶? ë°????
     @Override
     public boolean isCredentialsNonExpired() {
-        return true; // true -> ë§Œë£Œë˜ì§€ ì•ŠìŒ
+        return true; // true -> ë§?ë£????ì§? ??????
     }
 
-    // ê³„ì • ì‚¬ìš© ê°€ëŠ¥ ì—¬ë¶€ ë°˜í™˜
+    // ê³???? ?????? ê°???? ???ë¶? ë°????
     @Override
     public boolean isEnabled() {
-        return true; // true -> ì‚¬ìš© ê°€ëŠ¥
+        return true; // true -> ?????? ê°????
     }
 }

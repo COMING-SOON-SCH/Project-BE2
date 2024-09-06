@@ -1,13 +1,12 @@
-package Soon.Coming.springbootdeveloper.post_crud.service;
+package Soon.Coming.springbootdeveloper.post.service;
 
-import Soon.Coming.springbootdeveloper.post_crud.domain.Article;
-import Soon.Coming.springbootdeveloper.post_crud.dto.AddArticleRequest;
-import Soon.Coming.springbootdeveloper.post_crud.dto.UpdateArticleRequest;
-import Soon.Coming.springbootdeveloper.post_crud.repository.PostRepository;
-import jakarta.transaction.Transactional;
+import Soon.Coming.springbootdeveloper.post.domain.Article;
+import Soon.Coming.springbootdeveloper.post.dto.AddArticleRequest;
+import Soon.Coming.springbootdeveloper.post.dto.UpdateArticleRequest;
+import Soon.Coming.springbootdeveloper.post.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,35 +15,29 @@ import java.util.List;
 public class PostService {
     private final PostRepository postRepository;
 
-    //생성
     public Article save(AddArticleRequest request) {
         return postRepository.save(request.toEntity());
     }
 
-    //전체 조회
     public List<Article> findAll() {
         return postRepository.findAll();
     }
 
-    //하나 조회
     public Article findById(long id) {
         return postRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("not found: "+ id));
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
     }
 
-    //삭제
     public void delete(long id) {
         postRepository.deleteById(id);
     }
 
-    //수정
     @Transactional
     public Article update(long id, UpdateArticleRequest request) {
         Article article = postRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("not found: "+ id));
-
+                .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
         article.update(request.getTitle(), request.getContent());
-
         return article;
     }
 }
+

@@ -1,6 +1,6 @@
-package Soon.Coming.springbootdeveloper.post_crud.repository;
+package Soon.Coming.springbootdeveloper.post.repository;
 
-import Soon.Coming.springbootdeveloper.post_crud.domain.Article;
+import Soon.Coming.springbootdeveloper.post.domain.Article;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PostRepository extends JpaRepository<Article, Long> {
