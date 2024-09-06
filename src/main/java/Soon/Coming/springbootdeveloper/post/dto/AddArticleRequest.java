@@ -1,11 +1,12 @@
-package Soon.Coming.springbootdeveloper.post_crud.dto;
+package Soon.Coming.springbootdeveloper.post.dto;
 
-import Soon.Coming.springbootdeveloper.post_crud.domain.Article;
+import Soon.Coming.springbootdeveloper.post.domain.Article;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 
 @NoArgsConstructor
 @AllArgsConstructor
