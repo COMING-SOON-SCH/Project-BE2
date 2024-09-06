@@ -1,4 +1,4 @@
-package Soon.Coming.springbootdeveloper.post_crud.dto;
+package Soon.Coming.springbootdeveloper.post.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
