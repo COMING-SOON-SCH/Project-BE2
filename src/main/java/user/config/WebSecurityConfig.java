@@ -1,10 +1,4 @@
-<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
-<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
-<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
-<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
 package user.config;
-========
-package Soon.Coming.springbootdeveloper.userSignup.config;
 
 import Soon.Coming.springbootdeveloper.service.UserDetailService;
 ========
@@ -13,7 +7,6 @@ import Soon.Coming.springbootdeveloper.service.UserDetailService;
 package user.config;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
-import user.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/Soon/Coming/springbootdeveloper/user/domain/User.java
 package Soon.Coming.springbootdeveloper.user.domain;
-========
-package user.domain;
->>>>>>>> 5f49de1 (feat : post crud êµ???? (??????ì¤?)):src/main/java/user/domain/User.java
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +13,11 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
+<<<<<<<< HEAD:src/main/java/Soon/Coming/springbootdeveloper/user/domain/User.java
 @Builder
+========
+
+>>>>>>>> 5f49de1 (feat : post crud êµ???? (??????ì¤?)):src/main/java/user/domain/User.java
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor

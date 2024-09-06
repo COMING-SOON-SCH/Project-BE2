@@ -1,4 +1,4 @@
-package Soon.Coming.springbootdeveloper.post_crud.domain;
+package Soon.Coming.springbootdeveloper.post.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Article {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false)

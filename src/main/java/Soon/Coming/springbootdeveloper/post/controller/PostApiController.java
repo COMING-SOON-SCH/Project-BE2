@@ -1,9 +1,9 @@
 package Soon.Coming.springbootdeveloper.post.controller;
 
-import Soon.Coming.springbootdeveloper.post.domain.Post;
-import Soon.Coming.springbootdeveloper.post.dto.AddPostRequest;
-import Soon.Coming.springbootdeveloper.post.dto.PostResponse;
-import Soon.Coming.springbootdeveloper.post.dto.UpdatePostRequest;
+import Soon.Coming.springbootdeveloper.post.domain.Article;
+import Soon.Coming.springbootdeveloper.post.dto.AddArticleRequest;
+import Soon.Coming.springbootdeveloper.post.dto.ArticleResponse;
+import Soon.Coming.springbootdeveloper.post.dto.UpdateArticleRequest;
 import Soon.Coming.springbootdeveloper.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,27 +20,27 @@ public class PostApiController {
     private final PostService postService;
 
     @PostMapping("/posts")
-    public ResponseEntity<Long> addArticle(@RequestBody AddPostRequest request) {
-        Long articleId = postService.save(request);
+    public ResponseEntity<Article> addArticle(@RequestBody AddArticleRequest request) {
+        Article savedArticle = postService.save(request);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(articleId);
+                .body(savedArticle);
     }
 
     @GetMapping("/posts")
-    public ResponseEntity<List<PostResponse>> findAllArticles() {
-        List<PostResponse> articles = postService.findAll()
+    public ResponseEntity<List<ArticleResponse>> findAllArticles() {
+        List<ArticleResponse> articles = postService.findAll()
                 .stream()
-                .map(PostResponse::new)
+                .map(ArticleResponse::new)
                 .toList();
         return ResponseEntity.ok()
                 .body(articles);
     }
 
     @GetMapping("/posts/{id}")
-    public ResponseEntity<PostResponse> findArticle(@PathVariable long id) {
-        Post post = postService.findById(id);
+    public ResponseEntity<ArticleResponse> findArticle(@PathVariable long id) {
+        Article article = postService.findById(id);
         return ResponseEntity.ok()
-                .body(new PostResponse(post));
+                .body(new ArticleResponse(article));
     }
 
     @DeleteMapping("/posts/{id}")
@@ -51,10 +51,10 @@ public class PostApiController {
     }
 
     @PutMapping("/posts/{id}")
-    public ResponseEntity<Post> updateArticle(@PathVariable long id,
-                                              @RequestBody UpdatePostRequest request) {
-        Post updatedPost = postService.update(id, request);
+    public ResponseEntity<Article> updateArticle(@PathVariable long id,
+                                                 @RequestBody UpdateArticleRequest request) {
+        Article updatedArticle = postService.update(id, request);
         return ResponseEntity.ok()
-                .body(updatedPost);
+                .body(updatedArticle);
     }
 }
