@@ -1,7 +1,10 @@
+<<<<<<<< HEAD:src/main/java/Soon/Coming/springbootdeveloper/user/domain/User.java
 package Soon.Coming.springbootdeveloper.user.domain;
+========
+package user.domain;
+>>>>>>>> 5f49de1 (feat : post crud êµ???? (??????ì¤?)):src/main/java/user/domain/User.java
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -13,9 +16,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-<<<<<<<< HEAD:src/main/java/Soon/Coming/springbootdeveloper/user/domain/User.java
-@Builder
-========
 
 >>>>>>>> 5f49de1 (feat : post crud êµ???? (??????ì¤?)):src/main/java/user/domain/User.java
 @Getter
@@ -24,7 +24,6 @@ import java.util.List;
 @Entity // JPA ?????°í?°ë?? ì§????
 public class User implements UserDetails {
 
-    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id", nullable = false, unique = true)
@@ -37,7 +36,11 @@ public class User implements UserDetails {
     private String username; //?????? ?????¤ì??
 
     @Column(name = "password", nullable = false)
-    private String password; //?????? ë¹?ë°?ë²????
+    private String password; //?????? ë¹?ë°?ë²????\
+    
+    /*@Column(nullable = false)
+    private String name;
+    */
 
     // ê¶???? ë°????
     @Override
