@@ -1,4 +1,4 @@
-package user.dto;
+package Soon.Coming.springbootdeveloper.user.dto;
 
 import lombok.Getter;
 import lombok.Setter;

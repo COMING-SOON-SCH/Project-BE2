@@ -1,4 +1,4 @@
-package user.domain;
+package Soon.Coming.springbootdeveloper.user.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package user.service;
+package Soon.Coming.springbootdeveloper.user.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

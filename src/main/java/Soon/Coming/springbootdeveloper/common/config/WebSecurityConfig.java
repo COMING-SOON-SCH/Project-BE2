@@ -1,7 +1,6 @@
 package Soon.Coming.springbootdeveloper.common.config;
 
-import org.springframework.security.core.userdetails.UserDetailsService;
-import user.service.UserDetailService;
+import Soon.Coming.springbootdeveloper.user.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
