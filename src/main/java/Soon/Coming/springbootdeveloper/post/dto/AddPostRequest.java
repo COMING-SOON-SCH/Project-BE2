@@ -23,8 +23,13 @@ public class AddPostRequest {
     @NotBlank
     private Long user_id;
 
+    @NotBlank
+    private String email;
+
     @Positive
     private Long categoryId;
+
+
 
     public Post toEntity() {
         //???ì¤???? ??????
@@ -33,7 +38,7 @@ public class AddPostRequest {
                 .title(title)
                 .content(content)
                 .user_id(user_id)
-                //.user(userExample)
+
                 .build();
     }
 }

@@ -1,12 +1,19 @@
-<<<<<<<< HEAD:src/main/java/Soon/Coming/springbootdeveloper/common/config/WebSecurityConfig.java
-package Soon.Coming.springbootdeveloper.common.config;
-
-import Soon.Coming.springbootdeveloper.user.service.UserDetailService;
+<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
+<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
+<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
+<<<<<<<< HEAD:src/main/java/user/config/WebSecurityConfig.java
+package user.config;
 ========
+package Soon.Coming.springbootdeveloper.userSignup.config;
+
+import Soon.Coming.springbootdeveloper.service.UserDetailService;
+========
+========
+>>>>>>>> 29499d1 (feat : ??????ê°???? êµ????ì¤?, ??????ë¦???? êµ???? ?????????ì¤?):src/main/java/Soon/Coming/springbootdeveloper/common/config/WebSecurityConfig.java
 package user.config;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
 import user.service.UserDetailService;
->>>>>>>> 5f49de1 (feat : post crud êµ¬í˜„ (ì‹ í˜œì¤€)):src/main/java/user/config/WebSecurityConfig.java
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,7 +38,7 @@ public class WebSecurityConfig {
     private final UserDetailService userService;
 
     @Bean
-    // 1. ìŠ¤í”„ë§ ì‹œíë¦¬í‹° ê¸°ëŠ¥ ë¹„í™œì„±í™”
+    /*1. ??¤í??ë§? ??????ë¦???? ê¸°ë?? ë¹??????±í??*/
     public WebSecurityCustomizer configure(){
         return(web -> web.ignoring()
                 .requestMatchers(toH2Console())
@@ -39,7 +46,7 @@ public class WebSecurityConfig {
         );
     }
 
-    /**2. íŠ¹ì • HTTP ìš”ì²­ì— ëŒ€í•œ ì›¹ ê¸°ë°˜ ë³´ì•ˆ êµ¬ì„± */
+    /**2. ??¹ì?? HTTP ???ì²­ì?? ?????? ??? ê¸°ë?? ë³´ì?? êµ???? */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
@@ -54,27 +61,27 @@ public class WebSecurityConfig {
                         .loginPage("/login")
                         .defaultSuccessUrl("/articles")
                 )
-                .logout(logout -> logout //ë¡œê·¸ì•„ì›ƒ ì„¤ì •
+                .logout(logout -> logout //ë¡?ê·¸ì????? ??¤ì??
                         .logoutSuccessUrl("/login")
                         .invalidateHttpSession(true)
                 )
-                .csrf(AbstractHttpConfigurer::disable) //csrf ë¹„í™œì„±í™”
+                .csrf(AbstractHttpConfigurer::disable) //csrf ë¹??????±í??
                 .build();
     }
 
-    /** ì¸ì¦ ê´€ë¦¬ì ê´€ë ¨ ì„¤ì • */
+    /** ??¸ì?? ê´?ë¦???? ê´???? ??¤ì?? */
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http,
                                                        BCryptPasswordEncoder bCryptpasswordEncoder,
                                                        UserDetailService userDetailService)
             throws Exception {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userService); //ì‚¬ìš©ì ì •ë³´ ì„œë¹„ìŠ¤ ì„¤ì •
+        authProvider.setUserDetailsService(userService); //????????? ???ë³? ???ë¹???? ??¤ì??
         authProvider.setPasswordEncoder(bCryptpasswordEncoder);
         return new ProviderManager(authProvider);
     }
 
-    /** íŒ¨ìŠ¤ì›Œë“œ ì¸ì½”ë”ë¡œ ì‚¬ìš©í•  ë¹ˆ ë“±ë¡í•˜ê¸°*/
+    /** ?????¤ì????? ??¸ì?????ë¡? ????????? ë¹? ??±ë?????ê¸?*/
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();

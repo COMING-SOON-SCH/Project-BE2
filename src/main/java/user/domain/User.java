@@ -28,17 +28,17 @@ public class User implements UserDetails {
     @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", nullable = false, unique = true)
-    private Long userId; //?????? ???ë³???? ID
-
-    @Column(name = "email", nullable = false, unique = true)
-    private String email; // ?????? ??´ë?????
+    @Column(name = "user_id", unique = true)
+    private Long userId; //?????? ID
 
     @Column(name = "username", nullable = false, unique = true)
     private String username; //?????? ?????¤ì??
 
     @Column(name = "password", nullable = false)
     private String password; //?????? ë¹?ë°?ë²????
+
+    @Column(name = "email", nullable = false)
+    private String email; // ?????? ??´ë?????
 
     // ê¶???? ë°????
     @Override
