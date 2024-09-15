@@ -25,17 +25,22 @@ public class CreatePostRequest {
     @NotBlank
     private Long user_id;
 
+    @NotBlank
+    private String email;
+
     @Positive
     private Long categoryId;
 
+
+
     public Post toEntity() {
         //나중에 수정
-        User userExample = new User(1L, "Ogu", "password");
+        User userExample = new User();
         return Post.builder()
                 .title(title)
                 .content(content)
                 .user_id(user_id)
-                //.user(userExample)
+
                 .build();
     }
 }

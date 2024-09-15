@@ -1,5 +1,6 @@
-package user.config;
+package Soon.Coming.springbootdeveloper.common.config;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
 import user.service.UserDetailService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -25,7 +26,7 @@ public class WebSecurityConfig {
     private final UserDetailService userService;
 
     @Bean
-    /*1. 스프링 시큐리티 기능 비활성화*/
+    // 1. 스프링 시큐리티 기능 비활성화
     public WebSecurityCustomizer configure(){
         return(web -> web.ignoring()
                 .requestMatchers(toH2Console())

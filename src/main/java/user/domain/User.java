@@ -21,18 +21,17 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Long userId;
+    @Column(name = "user_id", unique = true)
+    private Long userId; //유저 ID
 
-    @Column(nullable = false, unique = true)
-    private String username;
+    @Column(name = "username", nullable = false, unique = true)
+    private String username; //유저 닉네임
 
-    @Column(nullable = false)
-    private String password;
+    @Column(name = "password", nullable = false)
+    private String password; //유저 비밀번호
 
-    /*@Column(nullable = false)
-    private String name;
-    */
+    @Column(name = "email", nullable = false)
+    private String email; // 유저 이메일
 
     // 권한 반환
     @Override
