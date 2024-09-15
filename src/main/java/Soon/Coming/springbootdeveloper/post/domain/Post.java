@@ -1,23 +1,19 @@
 package Soon.Coming.springbootdeveloper.post.domain;
 
-import Soon.Coming.springbootdeveloper.common.entity.BaseEntity;
-import Soon.Coming.springbootdeveloper.domain.User;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Builder
 @Entity
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
-public class Post extends BaseEntity {
-
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //기본키 1씩 증가
-    private Long postId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false)
+    private Long id;
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -25,7 +21,14 @@ public class Post extends BaseEntity {
     @Column(name = "content", nullable = false)
     private String content;
 
-    @ManyToOne(fetch = FetchType.LAZY) //유저에 관한 정보를 post가 필요할 때만 가져오게 함
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Builder
+    public Post(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }
