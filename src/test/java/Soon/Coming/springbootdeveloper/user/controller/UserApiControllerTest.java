@@ -18,8 +18,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(UserApicontroller.class) // 컨트롤러 레이어 테스트
-public class UserApicontrollerTest {
+
+@WebMvcTest(UserApiController.class) // 컨트롤러 레이어 테스트
+public class UserApiControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
