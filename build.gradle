@@ -6,14 +6,17 @@ plugins {
 
 group = 'Soon.Coming'
 version = '1.0'
-sourceCompatibility = '17'
+java{
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'    // JPA ???ì¡´ì?? ì¶?ê°?
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-security'  //??¤í??ë§? ??????ë¦???? ????????? ?????? ??¤í????? ì¶?ê°?
@@ -33,6 +36,10 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
 }
 
 test {

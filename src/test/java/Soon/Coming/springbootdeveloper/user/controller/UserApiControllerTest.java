@@ -1,13 +1,15 @@
 package Soon.Coming.springbootdeveloper.user.controller;
 
+import org.mockito.Mockito;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import Soon.Coming.springbootdeveloper.user.dto.AddUserRequest;
 import Soon.Coming.springbootdeveloper.user.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -15,13 +17,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @WebMvcTest(UserApiController.class) // 컨트롤러 레이어 테스트
-public class UserApiControllerTest {
-
+class UserApiControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
@@ -60,4 +59,5 @@ public class UserApiControllerTest {
                 .andExpect(status().is3xxRedirection())  // 리다이렉트 확인
                 .andExpect(redirectedUrl("/api/v1/auth/login")); // 로그인 페이지로 리다이렉트 확인
     }
+
 }
