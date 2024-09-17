@@ -6,13 +6,17 @@ plugins {
 
 group = 'Soon.Coming'
 version = '1.0'
-sourceCompatibility = '17'
+java{
+    sourceCompatibility = '17'
+    targetCompatibility = '17'
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -28,6 +32,8 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+
+
 }
 
 test {
