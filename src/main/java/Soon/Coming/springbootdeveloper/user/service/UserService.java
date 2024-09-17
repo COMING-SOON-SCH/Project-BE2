@@ -3,7 +3,7 @@ package Soon.Coming.springbootdeveloper.user.service;
 import Soon.Coming.springbootdeveloper.user.dto.AddUserRequest;
 import Soon.Coming.springbootdeveloper.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.userdetails.User;
+import Soon.Coming.springbootdeveloper.user.domain.User; //User 내가 커스텀한 걸로 쓰기
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +14,12 @@ public class UserService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    public Object save(AddUserRequest dto){
+    public Long save(AddUserRequest dto){
         return userRepository.save(User.builder()
-                .
-        )
-
-
+                        .userId(dto.getUserId())
+                        .email(dto.getEmail())
+                        .username(dto.getUsername())
+                        .password(bCryptPasswordEncoder.encode(dto.getPassword()))
+                .build()).getUserId();
     }
 }
