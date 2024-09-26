@@ -1,6 +1,5 @@
 package Soon.Coming.springbootdeveloper.post.dto;
 
-import Soon.Coming.springbootdeveloper.user.domain.User;
 import Soon.Coming.springbootdeveloper.post.domain.Post;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
