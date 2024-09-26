@@ -25,7 +25,6 @@ public class WebSecurityConfig {
     private final UserDetailService userService;
 
     @Bean
-    // 1. ??��??�? ??????�???? 기�?? �??????��??
     public WebSecurityCustomizer configure(){
         return(web -> web.ignoring()
                 .requestMatchers(toH2Console())
@@ -56,19 +55,17 @@ public class WebSecurityConfig {
                 .build();
     }
 
-
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http,
                                                        BCryptPasswordEncoder bCryptpasswordEncoder,
                                                        UserDetailService userDetailService)
             throws Exception {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        authProvider.setUserDetailsService(userService); //????????? ???�? ???�???? ??��??
+        authProvider.setUserDetailsService(userService);
         authProvider.setPasswordEncoder(bCryptpasswordEncoder);
         return new ProviderManager(authProvider);
     }
 
-    /** ?????��????? ??��?????�? ????????? �? ??��?????�?*/
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
