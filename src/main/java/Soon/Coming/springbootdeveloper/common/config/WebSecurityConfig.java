@@ -1,12 +1,6 @@
-<<<<<<<< HEAD:src/main/java/Soon/Coming/springbootdeveloper/common/config/WebSecurityConfig.java
 package Soon.Coming.springbootdeveloper.common.config;
 
 import Soon.Coming.springbootdeveloper.user.service.UserDetailService;
-========
-package user.config;
-
-import user.service.UserDetailService;
->>>>>>>> origin/develop:src/main/java/user/config/WebSecurityConfig.java
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -62,7 +56,7 @@ public class WebSecurityConfig {
                 .build();
     }
 
-    /** ??��?? �?�???? �???? ??��?? */
+
     @Bean
     public AuthenticationManager authenticationManager(HttpSecurity http,
                                                        BCryptPasswordEncoder bCryptpasswordEncoder,

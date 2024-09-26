@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/Soon/Coming/springbootdeveloper/user/domain/User.java
 package Soon.Coming.springbootdeveloper.user.domain;
-========
-package user.domain;
->>>>>>>> origin/develop:src/main/java/user/domain/User.java
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -2,7 +2,7 @@ package Soon.Coming.springbootdeveloper.postcool.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import Soon.Coming.springbootdeveloper.domain.User; // 실제 사용자 정보로 교체 필요
+import Soon.Coming.springbootdeveloper.user.domain.User;// 실제 사용자 정보로 교체 필요
 import Soon.Coming.springbootdeveloper.postcool.domain.Post;
 import Soon.Coming.springbootdeveloper.postcool.dto.AddPostRequest;
 import Soon.Coming.springbootdeveloper.postcool.dto.UpdatePostRequest;
@@ -19,7 +19,7 @@ public class PostService {
 
     // 게시물 생성
     public Post createPost(AddPostRequest request) {
-        User user = new User(123L, "username", "password"); // 실제 사용자 정보로 교체 필요
+        User user = new User(123L,"email", "username", "password"); // 실제 사용자 정보로 교체 필요
         Post post = request.toEntity(user);
         return postRepository.save(post);
     }

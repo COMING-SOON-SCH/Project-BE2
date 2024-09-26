@@ -1,10 +1,9 @@
 package Soon.Coming.springbootdeveloper.postcool.domain;
 
 import Soon.Coming.springbootdeveloper.common.entity.BaseEntity;
-import Soon.Coming.springbootdeveloper.domain.User;
+import Soon.Coming.springbootdeveloper.user.domain.User;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -15,29 +15,24 @@ import java.util.List;
 public class PostService {
     private final PostRepository postRepository;
 
-    //??????
     public Long save(AddPostRequest request) {
         Post post = postRepository.save(request.toEntity());
         return post.getId();
     }
 
-    //???ì²? ì¡°í??
     public List<Post> findAll() {
         return postRepository.findAll();
     }
 
-    //?????? ì¡°í??
     public Post findById(long id) {
         return postRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
     }
 
-    //??­ì??
     public void delete(long id) {
         postRepository.deleteById(id);
     }
 
-    //??????
     @Transactional
     public Post update(long id, UpdatePostRequest request) {
         Post post = postRepository.findById(id)

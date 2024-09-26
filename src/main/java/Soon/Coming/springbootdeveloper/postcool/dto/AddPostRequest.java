@@ -1,6 +1,6 @@
 package Soon.Coming.springbootdeveloper.postcool.dto;
 
-import Soon.Coming.springbootdeveloper.domain.User;
+import Soon.Coming.springbootdeveloper.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
