@@ -1,4 +1,4 @@
-package Soon.Coming.springbootdeveloper.post.dto;
+package Soon.Coming.springbootdeveloper.postcool.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

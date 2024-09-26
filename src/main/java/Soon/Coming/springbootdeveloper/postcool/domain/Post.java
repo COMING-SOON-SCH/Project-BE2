@@ -1,7 +1,10 @@
-package Soon.Coming.springbootdeveloper.post.domain;
+package Soon.Coming.springbootdeveloper.postcool.domain;
 
+import Soon.Coming.springbootdeveloper.common.entity.BaseEntity;
+import Soon.Coming.springbootdeveloper.domain.User;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,11 +12,12 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Post {
+public class Post extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false)
-    private Long id;
+    @Column(name = "post_id", updatable = false)
+    private Long postId;
 
     @Column(name = "title", nullable = false)
     private String title;
@@ -21,10 +25,15 @@ public class Post {
     @Column(name = "content", nullable = false)
     private String content;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
     @Builder
-    public Post(String title, String content) {
+    public Post(String title, String content, User user) {
         this.title = title;
         this.content = content;
+        this.user = user;
     }
 
     public void update(String title, String content) {
