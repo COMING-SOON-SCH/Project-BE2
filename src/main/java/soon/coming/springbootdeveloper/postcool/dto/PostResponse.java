@@ -1,5 +1,6 @@
 package soon.coming.springbootdeveloper.postcool.dto;
 
+/*
 import soon.coming.springbootdeveloper.postcool.domain.Post;
 import lombok.Getter;
 
@@ -14,3 +15,4 @@ public class PostResponse {
         this.content = post.getContent();
     }
 }
+ */

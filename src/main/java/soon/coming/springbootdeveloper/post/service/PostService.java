@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @RequiredArgsConstructor
-@Service
+@Service("postService")
 public class PostService {
     private final PostRepository postRepository;
 

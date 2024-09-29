@@ -1,5 +1,5 @@
 package soon.coming.springbootdeveloper.postcool.domain;
-
+/*
 import soon.coming.springbootdeveloper.common.entity.BaseEntity;
 import soon.coming.springbootdeveloper.user.domain.User;
 import jakarta.persistence.*;
@@ -40,3 +40,5 @@ public class Post extends BaseEntity {
         this.content = content;
     }
 }
+
+ */
