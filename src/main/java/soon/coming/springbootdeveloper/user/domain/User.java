@@ -18,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "UserTable") //user는 SQL 예약어
+@Table(name = "UserTable") //user는 SQL 예약어. 이름변경
 @Builder
 public class User implements UserDetails {
 
