@@ -19,12 +19,13 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/posts")
 public class PostController {
 
-    private final PostService postService;
+    //postService->postService2로 바꿈
+    private final PostService postService2;
 
     // 게시물 생성
     @PostMapping
     public ResponseEntity<PostResponse> createPost(@Validated @RequestBody AddPostRequest createPostRequest) {
-        Post savedPost = postService.createPost(createPostRequest);
+        Post savedPost = postService2.createPost(createPostRequest);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new PostResponse(savedPost));
     }
@@ -32,7 +33,7 @@ public class PostController {
     // 특정 게시물 조회
     @GetMapping("/{postId}")
     public ResponseEntity<PostResponse> getPost(@PathVariable Long postId) {
-        Post post = postService.getPost(postId);
+        Post post = postService2.getPost(postId);
         return ResponseEntity.ok()
                 .body(new PostResponse(post));
     }
@@ -40,7 +41,7 @@ public class PostController {
     // 모든 게시물 조회
     @GetMapping
     public ResponseEntity<List<PostResponse>> getAllPosts() {
-        List<PostResponse> posts = postService.getAllPosts()
+        List<PostResponse> posts = postService2.getAllPosts()
                 .stream()
                 .map(PostResponse::new)
                 .collect(Collectors.toList());
@@ -52,7 +53,7 @@ public class PostController {
     // 게시물 수정
     @PutMapping("/{postId}")
     public ResponseEntity<PostResponse> updatePost(@PathVariable Long postId, @Validated @RequestBody UpdatePostRequest updatePostRequest) {
-        Post updatedPost = postService.update(postId, updatePostRequest);
+        Post updatedPost = postService2.update(postId, updatePostRequest);
         return ResponseEntity.ok()
                 .body(new PostResponse(updatedPost));
     }
@@ -60,7 +61,7 @@ public class PostController {
     // 게시물 삭제
     @DeleteMapping("/{postId}")
     public ResponseEntity<Void> deletePost(@PathVariable Long postId) {
-        postService.delete(postId);
+        postService2.delete(postId);
         return ResponseEntity.ok()
                 .build();
     }
