@@ -1,5 +1,6 @@
 package soon.coming.springbootdeveloper.user.controller;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import soon.coming.springbootdeveloper.user.dto.AddUserRequest;
 import soon.coming.springbootdeveloper.user.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ public class UserApiController {
 
     /** 회원가입 컨트롤러 메서드. 완료 후 로그인 페이지로 연결됨*/
     @PostMapping("/signup")
-    public String signup(AddUserRequest request){
+    public String signup(@RequestBody AddUserRequest request){
         userService.save(request) ;//회원가입 메서드 호출
         return "redirect:/api/v1/auth/login"; //회원가입 완료 이후 로그인 페이지로 이동
     }
