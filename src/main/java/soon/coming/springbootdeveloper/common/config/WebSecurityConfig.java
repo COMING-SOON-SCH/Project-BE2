@@ -28,11 +28,10 @@ public class WebSecurityConfig {
     public WebSecurityCustomizer configure(){
         return(web -> web.ignoring()
                 .requestMatchers(toH2Console())
-                .requestMatchers(new AntPathRequestMatcher("/static/**"))
+                .requestMatchers(new AntPathRequestMatcher("/api/v1/auth/**"))
         );
     }
 
-    /**2. ??��?? HTTP ???청�?? ?????? ??? 기�?? 보�?? �???? */
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
@@ -40,18 +39,20 @@ public class WebSecurityConfig {
                         .requestMatchers(
                                 new AntPathRequestMatcher("/login"),
                                 new AntPathRequestMatcher("/signup"),
-                                new AntPathRequestMatcher("/user")
+                                new AntPathRequestMatcher("/user"),
+                                new AntPathRequestMatcher("/api/v1/auth/**") // API 엔드포인트를 허용
+
                         ).permitAll()
                         .anyRequest().authenticated())
                 .formLogin(formLogin -> formLogin
                         .loginPage("/login")
                         .defaultSuccessUrl("/articles")
                 )
-                .logout(logout -> logout //�?그�????? ??��??
+                .logout(logout -> logout
                         .logoutSuccessUrl("/login")
                         .invalidateHttpSession(true)
                 )
-                .csrf(AbstractHttpConfigurer::disable) //csrf �??????��??
+                .csrf(AbstractHttpConfigurer::disable)
                 .build();
     }
 

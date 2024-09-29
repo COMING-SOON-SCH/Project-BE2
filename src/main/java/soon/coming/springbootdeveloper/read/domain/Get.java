@@ -12,7 +12,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-public class GetController {
+public class Get {
 
     private final PostService postService;
 

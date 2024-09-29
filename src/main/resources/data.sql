@@ -1,3 +1,2 @@
-INSERT INTO post (title, content, user_id) VALUES ('???ык? 1', '??┤ь?? 1', 1);
-INSERT INTO post (title, content, user_id) VALUES ('???ык? 2', '??┤ь?? 2', 2);
-INSERT INTO post (title, content, user_id) VALUES ('???ык? 3', '??┤ь?? 3', 3);
+INSERT INTO Post (id, title, content) VALUES (1, 'test 1', 'testcontent');
+

@@ -18,6 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "UserTable") //user는 SQL 예약어. 이름변경
 @Builder
 public class User implements UserDetails {
 
@@ -27,25 +28,22 @@ public class User implements UserDetails {
     private Long userId;
 
     @Column(name = "email", nullable = false, unique = true)
-    private String email; // ?????? ??대?????
+    private String email;
 
     @Column(name = "username", nullable = false, unique = true)
-    private String username; //?????? ?????ㅼ??
+    private String username;
 
     @Column(name = "password", nullable = false)
-    private String password; //?????? 鍮?諛?踰????\
+    private String password;
     
     /*@Column(nullable = false)
     private String name;
     */
 
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("user"));
     }
-
-
 
     @Override
     public String getUsername() {

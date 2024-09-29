@@ -1,5 +1,6 @@
 package soon.coming.springbootdeveloper.postcool.dto;
 
+/*
 import soon.coming.springbootdeveloper.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,3 +22,5 @@ public class AddPostRequest {
                 .build();
     }
 }
+
+ */

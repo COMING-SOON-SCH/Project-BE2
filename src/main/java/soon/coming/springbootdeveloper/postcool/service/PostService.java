@@ -2,17 +2,19 @@ package soon.coming.springbootdeveloper.postcool.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import soon.coming.springbootdeveloper.post.repository.PostRepository;
 import soon.coming.springbootdeveloper.user.domain.User;// 실제 사용자 정보로 교체 필요
 import soon.coming.springbootdeveloper.postcool.domain.Post;
 import soon.coming.springbootdeveloper.postcool.dto.AddPostRequest;
 import soon.coming.springbootdeveloper.postcool.dto.UpdatePostRequest;
-import soon.coming.springbootdeveloper.postcool.repository.PostRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+/*
 @RequiredArgsConstructor
-@Service
+@Service("postServiceCool")
+
 public class PostService {
 
     private final PostRepository postRepository;
@@ -50,3 +52,4 @@ public class PostService {
         return post;
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package soon.coming.springbootdeveloper.postcool.controller;
 
 import soon.coming.springbootdeveloper.postcool.domain.Post;
@@ -65,3 +66,5 @@ public class PostController {
                 .build();
     }
 }
+
+ */
