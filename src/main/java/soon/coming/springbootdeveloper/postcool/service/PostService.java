@@ -1,5 +1,5 @@
 package soon.coming.springbootdeveloper.postcool.service;
-
+/*
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import soon.coming.springbootdeveloper.post.repository.PostRepository;
@@ -11,7 +11,7 @@ import soon.coming.springbootdeveloper.postcool.dto.UpdatePostRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-/*
+
 @RequiredArgsConstructor
 @Service("postServiceCool")
 
