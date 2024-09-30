@@ -13,13 +13,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(AbstractHttpConfigurer::disable);
+        http
                 .authorizeHttpRequests((requests) -> requests
                         // Swagger 관련 URL 예외 처리
-                        .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                        .requestMatchers("/api/v1/posts/**","/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                         // 나머지 요청은 인증 필요
                         .anyRequest().authenticated()
-                )
-                .formLogin();
+                );
+
         return http.build();
     }
 }
