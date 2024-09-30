@@ -1,4 +1,4 @@
-package Soon.Coming.springbootdeveloper.common.config;
+package soon.coming.springbootdeveloper.common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
