@@ -11,3 +11,15 @@ spring:
   h2: #user: CaffeineLIL, password: 123456 잠깐 테스트할려고 이렇게해놈
     console:
       enabled: true
+springdoc:
+  swagger-ui:
+    path: /api-test
+
+    groups-order: DESC
+
+    tags-sorter: alpha
+
+    operations-sorter: method
+
+  paths-to-match:
+    - /api/**
