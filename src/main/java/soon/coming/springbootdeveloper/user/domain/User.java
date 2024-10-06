@@ -24,10 +24,11 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", nullable = false, unique = true)
-    private Long userId;
+    @Column(name = "userCode", nullable = false, unique = true)
+    private Long userCode;
 
-    @Column(name = "email", nullable = false, unique = true)
+    //email -> 일반 ID로 바꾸기
+    @Column(name = "userID", nullable = false, unique = true)
     private String email;
 
     @Column(name = "username", nullable = false, unique = true)
@@ -35,10 +36,6 @@ public class User implements UserDetails {
 
     @Column(name = "password", nullable = false)
     private String password;
-    
-    /*@Column(nullable = false)
-    private String name;
-    */
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

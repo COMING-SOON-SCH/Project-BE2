@@ -16,10 +16,10 @@ public class UserService {
 
     public Long save(AddUserRequest dto){
         return userRepository.save(User.builder()
-                        .userId(dto.getUserId())
+                        .userCode(dto.getUserCode())
                         .email(dto.getEmail())
                         .username(dto.getUsername())
                         .password(bCryptPasswordEncoder.encode(dto.getPassword()))
-                .build()).getUserId();
+                .build()).getUserCode();
     }
 }
