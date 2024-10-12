@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 
 
 @Getter
@@ -23,22 +24,19 @@ import java.util.List;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", nullable = false, unique = true)
-    private Long userId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "userCode", nullable = false, unique = true)
+    private UUID userCode;
 
-    @Column(name = "email", nullable = false, unique = true)
-    private String email;
+    //email -> 일반 ID로 바꾸기
+    @Column(name = "userId", nullable = false, unique = true)
+    private String userId;
 
     @Column(name = "username", nullable = false, unique = true)
     private String username;
 
     @Column(name = "password", nullable = false)
     private String password;
-    
-    /*@Column(nullable = false)
-    private String name;
-    */
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

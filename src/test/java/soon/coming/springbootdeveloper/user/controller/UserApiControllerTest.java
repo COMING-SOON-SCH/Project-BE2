@@ -1,5 +1,5 @@
 package soon.coming.springbootdeveloper.user.controller;
-/*
+
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -14,6 +14,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+import soon.coming.springbootdeveloper.user.service.UserService;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -36,7 +37,7 @@ public class UserApiControllerTest {
     @DisplayName("회원가입 성공 테스트")
     void testSignup() throws Exception {
         AddUserRequest request = new AddUserRequest();
-        request.setUserId(1L);
+        request.setUserCode(1L);
         request.setEmail("test@example.com");
         request.setUsername("testuser");
         request.setPassword("password");
@@ -47,7 +48,7 @@ public class UserApiControllerTest {
         mockMvc.perform(post("/api/v1/auth/signup")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                         .param("userId", "1")
-                        .param("email", "test@example.com")
+                        .param("email", "testexample.com")
                         .param("username", "testuser")
                         .param("password", "password"))
                 .andExpect(status().is3xxRedirection())  // 리다이렉트 확인
@@ -63,4 +64,3 @@ public class UserApiControllerTest {
     }
 
 }
- */

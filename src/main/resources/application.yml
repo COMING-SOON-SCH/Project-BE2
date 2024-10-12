@@ -3,7 +3,7 @@ spring:
     show-sql: true
     properties:
       hibernate:
-        ddl-auto: update # 또는 create, create-drop 등
+        ddl-auto: update
         format_sql: true
     defer-datasource-initialization: true
 #  datasource:
