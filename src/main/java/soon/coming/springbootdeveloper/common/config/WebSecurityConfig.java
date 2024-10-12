@@ -32,7 +32,7 @@ public class WebSecurityConfig {
         );
     }
 
-    @Bean
+    @Bean(name = "webFilterChain")
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth-> auth
