@@ -1,4 +1,4 @@
-package Soon.Coming.springbootdeveloper.common.config;
+package soon.coming.springbootdeveloper.common.config;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

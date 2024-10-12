@@ -17,7 +17,8 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests((requests) -> requests
                         // Swagger 관련 URL 예외 처리
-                        .requestMatchers("/api/v1/posts/","/v3/api-docs/", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                        .requestMatchers("/","/api/v1/signup", "/api/v1/login",
+                                "/swagger-resources/**", "/swagger-ui/**","/swagger-ui/index.html", "/v3/api-docs/**", "/api/v1/posts/**").permitAll()
                         // 나머지 요청은 인증 필요
                         .anyRequest().authenticated()
                 );

@@ -1,10 +1,10 @@
 package soon.coming.springbootdeveloper.post.controller;
 
-import Soon.Coming.springbootdeveloper.post.domain.Post;
-import Soon.Coming.springbootdeveloper.post.dto.AddPostRequest;
-import Soon.Coming.springbootdeveloper.post.dto.PostResponse;
-import Soon.Coming.springbootdeveloper.post.dto.UpdatePostRequest;
-import Soon.Coming.springbootdeveloper.post.service.PostService;
+import soon.coming.springbootdeveloper.post.domain.Post;
+import soon.coming.springbootdeveloper.post.dto.AddPostRequest;
+import soon.coming.springbootdeveloper.post.dto.PostResponse;
+import soon.coming.springbootdeveloper.post.dto.UpdatePostRequest;
+import soon.coming.springbootdeveloper.post.service.PostService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
